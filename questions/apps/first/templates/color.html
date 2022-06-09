@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Угадать цвет</title>
+    <style>
+    body {
+        background: #bbc8da;
+        font-family: sans-serif;
+    }
+   .btn {
+        display: inline-block;
+        background: #8C959D;
+        color: #fff;
+        padding: 1rem 1.5rem;
+        text-decoration: none;
+        border-radius: 3px;
+        border-width: 0px;
+   }
+   .form {
+        background: #fff;
+        padding: 1rem 1.5rem;
+        border-radius: 3px;
+        height: 400px;
+        width: 300px;
+        margin-top:10%;
+   }
+   .square {
+        display: inline-block;
+        background: white;
+        border-color: #8C959D;
+        border-style: solid;
+        padding: 1rem 1.5rem;
+        border-radius: 3px;
+        border-width: 1px;
+        height: 50px;
+        width: 50px;
+        margin-top:10%;
+   }
+   .text {
+        box-sizing: border-box;
+        font-family: inherit;
+        display: block
+        border-radius: 3px;
+        padding: 1rem 1rem;
+   }
+   .header {
+        font-size: 17px;
+        line-height: 20px;
+        height:20px;
+        width:300px;
+        text-align:center;
+        border:0px solid #000;
+        margin-top:17%;
+        color: #616161;
+   }
+  </style>
+</head>
+<body>
+    <a style="font-size: 12px;" href="/" class="btn">Главная</a>
+    <center>
+    <form action="" method="post" class="form">
+        {% csrf_token %}
+       <p><div class="header" >Введите номер предмета от 1 до 100</div></p>
+       <p><input class="text" placeholder="Введите номер" size="25" name="number" min="1" max="10" ></p>
+       <p><input  class="btn" type="Submit" name="submit" value="Угадать цвет предмета" ></p>
+       <p><div id="square" class="square" style="background: {% if submit_button == 'Угадать цвет предмета' %}{{ color }}{% endif %};"></div></p>
+        <p>{{error}}</p>
+    </form>
+    </center>
+
+
+
+
+
+</body>
+</html>

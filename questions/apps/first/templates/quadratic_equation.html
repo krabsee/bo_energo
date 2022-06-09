@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Корень квадратного уравнения</title>
+    <style>
+        body {
+            background: #bbc8da;
+            font-family: sans-serif;
+        }
+        .btn {
+            display: inline-block;
+            background: #8C959D;
+            color: #fff;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            border-radius: 3px;
+            border-width: 0px;
+        }
+        .form {
+            background: #fff;
+            padding: 1rem 1.5rem;
+            border-radius: 3px;
+            height: 500px;
+            width: 300px;
+            margin-top:10%;
+        }
+        .text {
+            box-sizing: border-box;
+            font-family: inherit;
+            display: block
+            border-radius: 3px;
+            padding: 1rem 1rem;
+        }
+       .header {
+            font-size: 17px;
+            line-height: 20px;
+            height:20px;
+            width:300px;
+            text-align:center;
+            border:0px solid #000;
+            color: #616161;
+
+       }
+       .label {
+            display: block;
+            padding-top: 15%;
+            font-size: 20px;
+            color: #616161;
+       }
+    </style>
+</head>
+<body>
+    <a style="font-size: 12px;" href="/" class="btn">Главная</a>
+    <center>
+    <form action="" class="form" method="post">
+        {% csrf_token %}
+        <label>
+            <p><div class="header" >Первый коэффициент (а)</div></p>
+            <p><input class="text"  placeholder="Введите..." size="25" name="first_coefficient" min="1" max="50" ></p>
+        </label>
+        <label>
+            <p><div class="header" >Второй коэффициент (b)</div></p>
+            <p><input class="text"  placeholder="Введите..." size="25" name="second_coefficient" min="1" max="50" ></p>
+        </label>
+        <label>
+            <p><div class="header" >Третий коэффициент (c)</div></p>
+            <p><input class="text"  placeholder="Введите..." size="25" name="third_coefficient" min="1" max="50" ></p>
+        </label>
+        <p><input  class="btn" type="Submit" name="submit" value="Рассчитать значение X" ></p>
+        <p><label class="label">{% if submit_button == 'Рассчитать значение X' %}{{ answer }}{% endif %}</label></p>
+
+    </form>
+    </center>
+
+</body>
+</html>
